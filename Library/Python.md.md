@@ -5,8 +5,8 @@
   
 | Command | Effect |
 |--|--|
-| `print(line,end='')  print(line.strip())` | change end of line char (defaults to `\n`)  strips any trailing new lines. |
-| | |
+| `print(line,end='') ` | change end of line char (defaults to `\n`)  strips any trailing new lines. |
+|`print(line.strip())` | |
 | | |
 | | |
 | | |
@@ -14,6 +14,15 @@
 | | |
 
 
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | first line\   | first line\        |
+|               | next line     | next line          |
++---------------+---------------+--------------------+
+| Bananas       | first line\   | first line\        |
+|               | next line     | next line          |
++---------------+---------------+--------------------+
 
 
 
@@ -97,5 +106,5 @@ When we yield a var, it is returned to the caller but remembers where it stopped
 
 This is useful as an iterator as in the example above - the n in the for loop starts running only when primes() yielded (returned) an n that is a prime number.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc2NzcwMzc5LC03NDczMjc1MzBdfQ==
+eyJoaXN0b3J5IjpbLTc4ODA2MDM1OCwtNzQ3MzI3NTMwXX0=
 -->
