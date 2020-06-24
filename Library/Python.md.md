@@ -5,13 +5,22 @@
   
 | Command | Effect |
 |--|--|
-| `print(line,end='') ` | change end of line char (defaults to `\n`)  strips any trailing new lines. |
-|`print(line.strip())` | |
+| `print(line,end='') ` | change end of line char (defaults to `\n`)   |
+|`print(line.strip())` |strips any trailing new lines. |
+|`a, b = 0, 1` | `a=0; b=1`|
+|`print("foo" if a < b else "bar")` | `a < b ? print"foo": print"bar"`|
+
+|num = 42 / 9|
+|num = 42 // 9|
+|num = round(42 / 9)|
+|num = round(42 / 9, 2)|
+|num = divmod(42,9)
+
 | | |
 | | |
 | | |
-| | |
-| | |
+
+
 
 
 +---------------+---------------+--------------------+
@@ -106,5 +115,5 @@ When we yield a var, it is returned to the caller but remembers where it stopped
 
 This is useful as an iterator as in the example above - the n in the for loop starts running only when primes() yielded (returned) an n that is a prime number.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4ODA2MDM1OCwtNzQ3MzI3NTMwXX0=
+eyJoaXN0b3J5IjpbODcyODM1NTAyLC03NDczMjc1MzBdfQ==
 -->
