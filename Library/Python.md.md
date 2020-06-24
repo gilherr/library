@@ -28,83 +28,85 @@
 
 
 
-a, b = 0, 1
 
-a=0; b=1
+## JSON Format
 
-print("foo" if a < b else "bar")
+[DOCS](https://docs.python.org/2/library/json.html)
 
-a < b ? print"foo": print"bar"
+# convert string to json
 
-num = 42 / 9
+j1 = json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
 
-num = 42 // 9
+# pretty print a json
 
-num = round(42 / 9)
+print(json.dumps(j1, sort_keys=True, indent=4, separators=(',', ': ')))
 
-num = round(42 / 9, 2)
+# print the value 1.0 out of the example json
 
-num = divmod(42,9)
-
-(<type 'float'>, 4.66666)
-
-(<type 'float'>, 4.0) - floor
-
-(<type 'float'>, 5.0) - ceiling
-
-(<type 'float'>, 4.67) - round 2 after dot
-
-<class 'tuple'> (4, 6) - (div,mod)
-
-int(42.9)
-
-float(42)
-
-casting
-
-x | y, x & y, x ^ y, x >> 4, x << 4, ~x
-
-bitwise or,and,xor,shift left, right,not
-
-and, or - spelled out
-
-True and False = False
-
-are boolean operators. opposed to &,| which are doing bitwise arithmetics.
-
-s = "You can use special \ncharacters"
-
-s = r"a RAW string \n no special chars"
-
-s = "placeholders {} for vars".format(x)
-
-normal
-
-notice the 'r' in the begining
-
-insert x int the {}
-
-'''\
-
-triple lets you
-
-write line after line
-
-after line ''''
-
-notice that the \ is there to escape the new-line char. it must be at the end to escape it.
-
-range(0, 4) => 0 1 2 3
-
-l[0:5] => l[0] l[1] l[2] l[4]
-
-ranges in python are non inclusive
+print(j1[1]["bar"][2])
 
   
 
-When we yield a var, it is returned to the caller but remembers where it stopped. so next time the function is called, it continues after the yield.
+### Write JSON to file
 
-This is useful as an iterator as in the example above - the n in the for loop starts running only when primes() yielded (returned) an n that is a prime number.
+import codecs
+
+import json
+
+  
+
+# this will write every item in a new line
+
+with codecs.open("file.txt",'w','utf-8') as file:
+
+for item in arr:
+
+json.dump(item,file, ensure_ascii=False)
+
+file.write('\n')
+
+  
+
+# this will pritty print the entire json
+
+with codecs.open("file.txt",'w','utf-8') as file:
+
+json.dump(item,file,indent=2,ensure_ascii=False)
+
+  
+
+  
+  
+
+## Hebrew UTF-8 Decoding
+
+[stackoverflow](http://stackoverflow.com/questions/29850912/decoding-and-encoding-hebrew-string-in-python)
+
+## Switch statements replacement
+
+  
+
+def main():
+
+choices = dict(
+
+one = 'first',
+
+two = 'second',
+
+three = 'third',
+
+four = 'fourth',
+
+five = 'fifth'
+
+)
+
+v = 'one'
+
+# dict.get(item, default if not found)
+
+print(choices.get(v, 'other'))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM4NDU2NDYwLC03NDczMjc1MzBdfQ==
+eyJoaXN0b3J5IjpbLTEzMzk3MjU5OTQsLTc0NzMyNzUzMF19
 -->
