@@ -3,10 +3,12 @@
 # Things to remember
 
   
-```python
-print(line,end='')
+| Command | Effect |
+|--|--|
+| print(line,end='') print(line.strip()) |  |
 
-print(line.strip())
+
+
 
 change end of line char (defaults to "\n")
 
@@ -90,5 +92,5 @@ When we yield a var, it is returned to the caller but remembers where it stopped
 
 This is useful as an iterator as in the example above - the n in the for loop starts running only when primes() yielded (returned) an n that is a prime number.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NDcyODkxMSwtNzQ3MzI3NTMwXX0=
+eyJoaXN0b3J5IjpbLTE0NDQzNTA0MzcsLTc0NzMyNzUzMF19
 -->
