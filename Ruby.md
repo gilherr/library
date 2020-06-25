@@ -1,9 +1,8 @@
 # Ruby Basics
 
-
 ## General Notes
 
-- `object.class` will return the class of the requested object
+* `object.class` will return the class of the requested object
 
 ## References
 
@@ -12,9 +11,9 @@
 
 ## Style Guide
 
-- Soft tabs: 2 spaces, convert tabs to spaces.
-- class names: **CamelCase**
-- file names, method names and variable names: **snake_case**
+* Soft tabs: 2 spaces, convert tabs to spaces.
+* class names: **CamelCase**
+* file names, method names and variable names: **snake_case**
 
 [github.com/rubocop-hq/ruby-style-guide](https://github.com/rubocop-hq/ruby-style-guide)
 [github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide)
@@ -57,7 +56,7 @@ greeting # => Hello world
 '1' * 5 # => "11111"
 ```
 
-### Methods
+### String Methods
 
 | Method           | Description |
 | ---------------- | ----------- |
@@ -66,7 +65,6 @@ greeting # => Hello world
 | `str.capitalize` |             |
 | `str.upcase`     |             |
 | `str.downcase`   |             |
-
 
 ```ruby
 greeting.reverse # => "dlrow olleH"
@@ -94,7 +92,7 @@ Single quotes disables string interpolation.
 
 ```ruby
 puts "\ta\t#{1+1}"
-# 	a	2
+#  a 2
 puts '\ta\t#{1+1}'
 # "\ta\t#{1+1}"
 ```
@@ -110,7 +108,7 @@ puts '\ta\t#{1+1}'
 => 9
 
 # arr[x,y] : start at index x and retrieve y items
->> arr[3,5] 
+>> arr[3,5]
 => [3, 4, 5, 6, 7]
 
 >> arr[-2,2]
@@ -127,7 +125,7 @@ puts '\ta\t#{1+1}'
 => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "new_item"]
 ```
 
-### Methods
+### Array Methods
 
 **Note**:  some methods support the `!` operator at the end of their name (e.g `arr.reverse!`). This runs the method in place, mutating the original object.
 
@@ -136,7 +134,7 @@ array = [2, 4, ['a', 'b'], nil, 4, 'c']
 
 array.length          # => 6
 array.size            # => 6
-array.empty?		  # => false
+array.empty?          # => false
 array.reverse!        # => ["c", 4, nil, ["a", "b"], 4, 2]
 array.shuffle!        # => ["c", 4, ["a", "b"], nil, 2, 4]
 array.uniq!           # => ["c", 4, ["a", "b"], nil, 2]
@@ -171,17 +169,17 @@ Much like python dictionary or javascript json.
 ```ruby
 # Basic Hash
 car = {
-  'brand' => 'Ford', 
-  'model' => 'Mustang', 
-  'color' => 'blue', 
+  'brand' => 'Ford',
+  'model' => 'Mustang',
+  'color' => 'blue',
   'interior_color' => 'tan'
 }
 
 # With Symbols
 car_s = {
-  brand: 'Ford', 
-  model: 'Mustang', 
-  color: 'blue', 
+  brand: 'Ford',
+  model: 'Mustang',
+  color: 'blue',
   interior_color: 'tan'
 }
 
@@ -209,7 +207,7 @@ Can work as a tag. easier to manage in memory and (probably?) helps with an IDE 
 
 person = {:first_name => 'Benjamin', :last_name => 'Franklin'}
 # OR
-person = {first_name: 'Benjamin', last_name: 'Franklin'} 
+person = {first_name: 'Benjamin', last_name: 'Franklin'}
 
 person[:first_name] # => "Benjamin"
 
@@ -275,7 +273,9 @@ else
     # ...
 end
 ```
+
 ### unless
+
 ```ruby
 unless array.empty?
     # ...
@@ -332,7 +332,6 @@ score += 10 unless score >= MAX_SCORE
 
 ### Control Methods
 
-
 | Command| Description|
 | --------------- | ------ |
 | `break` | Terminate the whole loop |
@@ -381,7 +380,6 @@ By Class
 | Hash    | `each, each_key, each_value, each_pair` |
 
 Array
-
 
 ```ruby
 fruits = ['banana', 'apple', 'pear']
@@ -469,26 +467,27 @@ x # => [50, 100, 150, 200, 250]
 
 fruits = ['apple', 'banana', 'pear']
 
-cap_fruits = fruits.map do |fruit|   
+cap_fruits = fruits.map do |fruit|
     fruit.capitalize if fruit == 'pear'
 end # => [nil, nil, "Pear"]
 
-cap_fruits = fruits.map do |fruit|   
+cap_fruits = fruits.map do |fruit|
     fruit == 'pear' ? fruit.capitalize : fruit
 end # => ["apple", "banana", "Pear"]
 
 # this will print the fruits but the return value will be => [nil, nil, nil]
-cap_fruits = fruits.map do |fruit|   
+cap_fruits = fruits.map do |fruit|
     puts fruit.capitalize
-end 
+end
 
-fruits.map! do |fruit|   
+fruits.map! do |fruit|
     fruit.capitalize
 end # fruits has mutated! => ["Apple", "Banana", "Pear"]
 
 ```
 
 ### Reduce (Inject)
+
 ```ruby
 [1,2,3,4,5].inject {|memo, n| memo + n} # => 15
 [1,2,3,4,5].inject {|memo, n| memo * n} # => 120
@@ -587,7 +586,7 @@ end
 
 puts welcome('Hello', 'neighbor', '!!!')
 
-# A common Ruby pattern is to use an options hash 
+# A common Ruby pattern is to use an options hash
 def welcome(greeting, options={})
   name = options[:name] || 'friend'
   punct = options[:punct] || '!'
@@ -638,7 +637,7 @@ a, s = add_and_subtract(8,3)
 ```ruby
 # Basic
 class Person
-  @first_name	# instance variables
+  @first_name # instance variables
 
   def to_s
     @first_name

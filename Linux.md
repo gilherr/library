@@ -7,19 +7,19 @@
 create a new user. note that its different than `useradd`.
 
 ```bash
-$ adduser <username>
+adduser <username>
 ```
 
 Change [create] user's password
 
 ```bash
-$ passwd <username>
+passwd <username>
 ```
 
 Check if user was created succesfuly
 
 ```bash
-$ cat /etc/passwd | grep <username>
+cat /etc/passwd | grep <username>
 ```
 
 ### Add User to Group
@@ -34,20 +34,19 @@ $ usermod -aG <group> <username>
 Use `-r` to remove the user's `Home` folder.
 
 ```bash
-$ userdel -r <username>
+userdel -r <username>
 ```
 
 ### Change Current User
 
 ```bash
-$ su - <username>
-$ su -              # this changes to root user
+su - <username>
+su -              # this changes to root user
 ```
 
 ### References
 
 - [tecmint](https://www.tecmint.com/add-users-in-linux/)
-
 
 ## Datetime
 
@@ -55,7 +54,7 @@ $ su -              # this changes to root user
 
 taken from [here](https://www.garron.me/en/linux/set-time-date-timezone-ntp-linux-shell-gnome-command-line.html)
 
-```
+```bash
 # set timezone
 cp /usr/share/zoneinfo/Israel /etc/localtime
 

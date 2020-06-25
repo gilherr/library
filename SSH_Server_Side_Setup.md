@@ -3,7 +3,7 @@
 ## Setup Server Side
 
 ```bash
-$ sudo apt-get install openssh-server net-tools
+sudo apt-get install openssh-server net-tools
 ```
 
 Check to see if server is listening
@@ -24,10 +24,11 @@ Edit `/etc/ssh/sshd_config` and change the following lines:
 PermitRootLogin no
 PasswordAuthentication no
 ```
+
 Now restart the service with
 
 ```bash
-$ sudo service ssh restart
+sudo service ssh restart
 ```
 
 see [Key Generation](#key-generation) for user side steps.
@@ -39,7 +40,7 @@ To rename a server's address, append `<address>   <name>` to the `/etc/hosts` fi
 To connect to remote machine:
 
 ```bash
-$ ssh <username>@<server-address>
+ssh <username>@<server-address>
 ```
 
 ### Key Setup
@@ -55,12 +56,11 @@ $ scp <keyname>.pub <username>@<address>:/home/<username>/.ssh/uploaded.pub
 Now on the remote machine
 
 ```bash
-$ cat ~/.ssh/uploaded.pub >> authorized_keys
-$ chmod 700 ~/.ssh
-$ chmod 600 ~/.ssh/*
+cat ~/.ssh/uploaded.pub >> authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
 ```
 
 Now you can connect using the keys.
 Note that you might need to look into the config at `/etc/ssh/sshd_config` if
 to change things like root login or allow password connections.
-

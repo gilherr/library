@@ -8,11 +8,11 @@
 |`print(line.strip())` | strips any trailing new lines. |
 |`a, b = 0, 1`| a=0; b=1 |
 |`print("foo" if a < b else "bar")`| a < b ? print"foo": print"bar" |
-|`num = 42 / 9`| (<type 'float'>, 4.66666)|
-|`num = 42 // 9`| (<type 'float'>, 4.0) - floor|
-|`num = round(42 / 9)`| (<type 'float'>, 5.0) - ceiling|
-|`num = round(42 / 9, 2)`| (<type 'float'>, 4.67) - round 2 after dot|
-|`num = divmod(42,9)`| <class 'tuple'> (4, 6) - (div,mod)|
+|`num = 42 / 9`| (type 'float', 4.66666)|
+|`num = 42 // 9`| (type 'float', 4.0) - floor|
+|`num = round(42 / 9)`| (type 'float', 5.0) - ceiling|
+|`num = round(42 / 9, 2)`| (type 'float', 4.67) - round 2 after dot|
+|`num = divmod(42,9)`| class 'tuple' (4, 6) - (div,mod)|
 |`int(42.9)`, `float(42)`|casting|
 |`x | y, x & y, x ^ y, x >> 4, x << 4, ~x`|bitwise or,and,xor,shift left, right,not|
 |`and, or - spelled out`|are boolean operators. opposed to &,| which are doing bitwise arithmetics.|
@@ -54,12 +54,12 @@ with codecs.open("file.txt",'w','utf-8') as file:
 with codecs.open("file.txt",'w','utf-8') as file:
    json.dump(item,file,indent=2,ensure_ascii=False)
 ```
- 
+
 ## Hebrew UTF-8 Decoding
 
 [stackoverflow](http://stackoverflow.com/questions/29850912/decoding-and-encoding-hebrew-string-in-python)
 
-## Switch statements replacement 
+## Switch statements replacement
 
 ```python
 def main():
@@ -102,7 +102,6 @@ print(sys.argv)
 # ["main.py", "arg1", "arg2"]
 ```
 
-
 ## Serialization - Pickle
 
 [realPython](https://realpython.com/python-pickle-module/)
@@ -112,16 +111,18 @@ print(sys.argv)
 [Link](https://www.ics.uci.edu/~brgallar/week8_2.html)
 
 ## Everything is an object
+
 Everything in Python 3 is an object: variables, functions, even code;
 Every object has:
+
 * ID: Is a unique identifier that identifies a particular instance of an object, cannot change for the life of the object.
 * Type: Identifies the class of an object, cannot change for the life of the object.
 * Value: The contents of the object. variables, methods, or properties .
 
-### Mutable and Immutable 
+### Mutable and Immutable
 
-* Mutable 	objects that can change their value. 
-* Immutable 	objects that cannot change their value. 
+* Mutable  objects that can change their value.
+* Immutable  objects that cannot change their value.
 
 Some immutable objects at times may look like they are changing their values.
 They are not actually changing their values though. The distinction is visible
@@ -129,7 +130,7 @@ using the id function.
 Integers, container objects, strings, things like these may appear to be
 changing values when they are not.
 
-Most fundamental types in Python are immutable: Numbers, strings, and tuples. 
+Most fundamental types in Python are immutable: Numbers, strings, and tuples.
 
 Mutable objects include: Lists, dictionaries and some other objects.
 
@@ -178,7 +179,6 @@ True
 >>> x is y
 False
 ```
-
 
 ## Regular Expressions
 
@@ -229,6 +229,7 @@ def main():
 [https://docs.python.org/3/library/exceptions.html](https://docs.python.org/3/library/exceptions.html)
 
 ### Catch Exception
+
 ```python
 def main():
    try:
@@ -271,8 +272,8 @@ def readFile(filename):
 
 ## Functions
 
--   Empty Function requiers the pass statement.
--   Parameteres that have default value are optional. others are requiered.
+* Empty Function requiers the pass statement.
+* Parameteres that have default value are optional. others are requiered.
 
 ```python
 def main():
@@ -291,8 +292,6 @@ def anotherfunc(must, opt = 1, opt2 = None):
 # main() is called after all the function have been declared.
 if __name__ == "__main__": main()
 ```
-
-
 
 ### Send a list of arguments to a function
 
@@ -324,7 +323,7 @@ def testfunc(first, second, third, *args, **kwargs):
 
 Its a function that returns an iterator object.
 Meant to be used in loops.
-The yield statement returns "i" but when the generator is called again (in the loop) it continues from the yield statement. 
+The yield statement returns "i" but when the generator is called again (in the loop) it continues from the yield statement.
 
 ```python
 def main():
@@ -356,8 +355,6 @@ def inclusive_range(*args):
 if __name__ == "__main__": main()
 ```
 
-
-
 ## Function  Decorators
 
 ```python
@@ -384,8 +381,7 @@ def greet():
 'Hello!'
 ```
 
-
-### Decorating Functions That Accept Arguments:
+### Decorating Functions That Accept Arguments
 
 ```python
 def trace(func):
@@ -410,7 +406,6 @@ def say(name, line):
 'TRACE: say() returned "Jane: Hello, World"'
 'Jane: Hello, World'
 ```
-
 
 ## OO Python
 
@@ -472,7 +467,6 @@ def main():
    print(donald.get_variable('color'))
 ```
 
-
 ## Inheritance
 
 ```python
@@ -489,6 +483,7 @@ class SubClass2(SuperClass):
 ## Generator Object
 
 By using the __iter__ method, we can create our own iterator for the class and use it in loops.
+
 ```python
 class myCounter:
    def __init__(self, count):
@@ -538,9 +533,6 @@ def main():
    print(donald.color)
 ```
 
-
-
-
 ## Strings
 
 ### Available String Methods
@@ -571,7 +563,6 @@ A string object is immutable. when you call these function on it, they return a 
 |`'This is a string of words'.split('i')`|['Th', 's ', 's a str', 'ng of words']|
 |`':'.join(['Th', 's ', 's a str', 'ng of words'])`|'Th:s :s a str:ng of words'|
 
-
 ## Containers
 
 ### Tuple vs List
@@ -581,7 +572,6 @@ Tuples are lighter classes, they are simpler and faster. More often than not, yo
 ### Tuple
 
 Is an immutable object. It cannot be changed.
-
 
 | Command | Action |
 | ------- | ------ |
@@ -594,7 +584,6 @@ Is an immutable object. It cannot be changed.
 |`8 not in t`|True|
 |`t.count(3)`|1|
 |`t.index(3)`|2 - first occurrence|
-
 
 ### The list
 
@@ -637,7 +626,6 @@ print squares
 
 ### Slice
 
-
 ```python
 list = [0,1,2,3,4,5,6,7,8,9,10]
 list[3:9:2]     #[START:END:STEP]
@@ -676,10 +664,9 @@ if __name__ == "__main__":
         print(item)
 ```
 
-
 ### The Dictionary
 
-Hash array. 
+Hash array.
 
 ```python
 d = {'one': 1, 'two': 2, 'three': 'three'}
@@ -703,7 +690,6 @@ d.pop('one') # returns its value and deletes it.
 
 [Real Python](https://realpython.com/iterate-through-dictionary-python/#using-some-of-pythons-built-in-functions)
 
-
 #### Dictionary Comprehension
 
 ```python
@@ -716,6 +702,7 @@ double_dict1 = {k:v*2 for (k,v) in dict1.items()}
 ```
 
 ### Collections.Counter
+
 ```python
 from collections import Counter
 
@@ -728,13 +715,11 @@ print(Counter(s).most_common())
 [('d', 4), ('g', 4), ('a', 3), ('b', 3), ('c', 3), ('e', 1), ('f', 1)]
 ```
 
-
-
 ## Files
 
 ### Open file
 
-`f = open('lines.txt')` - by default opens file for read only. Available flags: 
+`f = open('lines.txt')` - by default opens file for read only. Available flags:
 `r`, `r+` read\write, `rb` binary, `rt` text, `w`, `a` append.
 
 ### Write to file
@@ -743,7 +728,7 @@ print(Counter(s).most_common())
 with open('some_file', 'w') as opened_file:
     opened_file.write('Hola!')
 
-# or 
+# or
 
 print("some string or var", file = f, end = '')
 ```
@@ -807,16 +792,16 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 ## Concurrency
 
 Rule of thumb:
-- I\O  Multithreading
-- CPU  Multiprocessing
+
+* I\O  Multithreading
+* CPU  Multiprocessing
 
 ### The GIL
 
-- [Understanding the Python GIL](https://www.youtube.com/watch?v=Obt-vMVdM8s)
-- [Die Threads](https://www.youtube.com/watch?v=U66KuyD3T0M&t=296s)
+* [Understanding the Python GIL](https://www.youtube.com/watch?v=Obt-vMVdM8s)
+* [Die Threads](https://www.youtube.com/watch?v=U66KuyD3T0M&t=296s)
 
 The GIL (Global Interpreter Lock) allows only one thread to run at a time for a single interpreter.
-
 
 ### Concurrent.Futures
 
@@ -843,47 +828,42 @@ if __name__ == "__main__":
         executor.map(thread_function, range(30))
 ```
 
-
-
 ### References
 
-- [Producer-Consumer Using Queue](https://realpython.com/intro-to-python-threading/#producer-consumer-using-queue)
+* [Producer-Consumer Using Queue](https://realpython.com/intro-to-python-threading/#producer-consumer-using-queue)
 
--   [Youtube](https://youtu.be/fKl2JW_qrso?t=1037) example using concurrent.futures.{Process,Thread}PoolExecuter
-    
--   [An introduction to parallel programming using Python's multiprocessing module](https://sebastianraschka.com/Articles/2014_multiprocessing.html)
-    
--   [Real Python](https://realpython.com/intro-to-python-threading/#using-a-threadpoolexecutor) - good article about multi-threading with good examples
-    
--   [Tutorialspoint](https://www.tutorialspoint.com/python/python_multithreading.htm) - more threading examples
-    
+* [Youtube](https://youtu.be/fKl2JW_qrso?t=1037) example using concurrent.futures.{Process,Thread}PoolExecuter
 
-- [Multithreading Multiprocessing](https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python#article-updates) - tutorial. relatively deep
+* [An introduction to parallel programming using Python's multiprocessing module](https://sebastianraschka.com/Articles/2014_multiprocessing.html)
 
+* [Real Python](https://realpython.com/intro-to-python-threading/#using-a-threadpoolexecutor) - good article about multi-threading with good examples
+
+* [Tutorialspoint](https://www.tutorialspoint.com/python/python_multithreading.htm) - more threading examples
+
+* [Multithreading Multiprocessing](https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python#article-updates) - tutorial. relatively deep
 
 ## Context Manager - The 'with' statement
-
 
 The with statement is used to wrap the execution of a block with methods defined by a context manager. This allows common `try...except...finally` usage patterns to be encapsulated for convenient reuse.
 
 ```python
-# Python program creating a 
-# context manager 
+# Python program creating a
+# context manager
 
-class ContextManager(): 
-	def __init__(self): 
-		print('init method called') 
-		
-	def __enter__(self): 
-		print('enter method called') 
-		return self
-	
-	def __exit__(self, exc_type, exc_value, exc_traceback): 
-		print('exit method called') 
+class ContextManager():
+ def __init__(self):
+  print('init method called')
+  
+ def __enter__(self):
+  print('enter method called')
+  return self
+
+ def __exit__(self, exc_type, exc_value, exc_traceback):
+  print('exit method called')
 
 
-with ContextManager() as manager: 
-	print('with statement block')
+with ContextManager() as manager:
+ print('with statement block')
 
 ## Output
 # init method called
@@ -892,7 +872,8 @@ with ContextManager() as manager:
 # exit method called
 ```
 
-### References
+### Context Manager - References
+
 [Docs](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement)
 
 ## Logging
@@ -931,11 +912,10 @@ logger.error('error message')
 logger.critical('critical message')
 ```
 
+### Logging - References
 
-### References
-- [Docs](https://docs.python.org/3/library/logging.html)
-- [Logging Cookbook](https://docs.python.org/3.6/howto/logging-cookbook.html#logging-cookbook)
-
+* [Docs](https://docs.python.org/3/library/logging.html)
+* [Logging Cookbook](https://docs.python.org/3.6/howto/logging-cookbook.html#logging-cookbook)
 
 ## Testing
 
@@ -979,7 +959,6 @@ def test_is_palindrome(palindrome):
 def test_is_palindrome_not_palindrome(non_palindrome):
     assert not is_palindrome(non_palindrome)
 ```
-
 
 ### Mock
 
