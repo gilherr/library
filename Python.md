@@ -1,5 +1,71 @@
 # Python 3.x
 
+<!-- TOC -->
+
+- [Things to remember](#things-to-remember)
+- [JSON Format](#json-format)
+    - [Write JSON to file](#write-json-to-file)
+- [Switch statements replacement](#switch-statements-replacement)
+- [For loop with index](#for-loop-with-index)
+- [Reading CLI Arguments](#reading-cli-arguments)
+- [Serialization - Pickle](#serialization---pickle)
+- [Time Complexity](#time-complexity)
+- [Everything is an object](#everything-is-an-object)
+    - [Mutable and Immutable](#mutable-and-immutable)
+- [Regular Expressions](#regular-expressions)
+- [Exceptions](#exceptions)
+    - [Python Exceptions List](#python-exceptions-list)
+    - [Catch Exception](#catch-exception)
+    - [Raise Exception](#raise-exception)
+- [Functions](#functions)
+    - [Send a list of arguments to a function](#send-a-list-of-arguments-to-a-function)
+    - [`**kwargs` - KeyWord Arguments](#kwargs---keyword-arguments)
+- [Generator Function](#generator-function)
+- [Function  Decorators](#function--decorators)
+    - [Decorating Functions That Accept Arguments](#decorating-functions-that-accept-arguments)
+- [OO Python](#oo-python)
+    - [Classes](#classes)
+    - [Dunder Functions](#dunder-functions)
+    - [**kwargs Constructor](#kwargs-constructor)
+- [Inheritance](#inheritance)
+- [Generator Object](#generator-object)
+- [Class Decorators](#class-decorators)
+- [Strings](#strings)
+    - [Available String Methods](#available-string-methods)
+- [Containers](#containers)
+    - [Tuple vs List](#tuple-vs-list)
+    - [Tuple](#tuple)
+    - [The list](#the-list)
+    - [List Comprehensions](#list-comprehensions)
+    - [Slice](#slice)
+    - [Iterators](#iterators)
+    - [The Dictionary](#the-dictionary)
+        - [Iterating Through a Dictionary](#iterating-through-a-dictionary)
+        - [Dictionary Comprehension](#dictionary-comprehension)
+    - [Collections.Counter](#collectionscounter)
+- [Files](#files)
+    - [Open file](#open-file)
+    - [Write to file](#write-to-file)
+    - [Using a buffer](#using-a-buffer)
+    - [Open Binary Files](#open-binary-files)
+    - [Path Resolution](#path-resolution)
+    - [Temporary Files and Folders](#temporary-files-and-folders)
+- [Concurrency](#concurrency)
+    - [The GIL](#the-gil)
+    - [Concurrent.Futures](#concurrentfutures)
+    - [References](#references)
+- [Context Manager - The 'with' statement](#context-manager---the-with-statement)
+    - [Context Manager - References](#context-manager---references)
+- [Logging](#logging)
+    - [Logging - References](#logging---references)
+- [Testing](#testing)
+    - [Pytest](#pytest)
+        - [Fixtures With Setup Teardown](#fixtures-with-setup-teardown)
+        - [Parametrization: Combining Tests](#parametrization-combining-tests)
+    - [Mock](#mock)
+
+<!-- /TOC -->
+
 ## Things to remember
 
 | Command | Action |
@@ -54,10 +120,6 @@ with codecs.open("file.txt",'w','utf-8') as file:
 with codecs.open("file.txt",'w','utf-8') as file:
    json.dump(item,file,indent=2,ensure_ascii=False)
 ```
-
-## Hebrew UTF-8 Decoding
-
-[stackoverflow](http://stackoverflow.com/questions/29850912/decoding-and-encoding-hebrew-string-in-python)
 
 ## Switch statements replacement
 
@@ -115,14 +177,14 @@ print(sys.argv)
 Everything in Python 3 is an object: variables, functions, even code;
 Every object has:
 
-* ID: Is a unique identifier that identifies a particular instance of an object, cannot change for the life of the object.
-* Type: Identifies the class of an object, cannot change for the life of the object.
-* Value: The contents of the object. variables, methods, or properties .
+- ID: Is a unique identifier that identifies a particular instance of an object, cannot change for the life of the object.
+- Type: Identifies the class of an object, cannot change for the life of the object.
+- Value: The contents of the object. variables, methods, or properties .
 
 ### Mutable and Immutable
 
-* Mutable  objects that can change their value.
-* Immutable  objects that cannot change their value.
+- Mutable  objects that can change their value.
+- Immutable  objects that cannot change their value.
 
 Some immutable objects at times may look like they are changing their values.
 They are not actually changing their values though. The distinction is visible
@@ -272,8 +334,8 @@ def readFile(filename):
 
 ## Functions
 
-* Empty Function requiers the pass statement.
-* Parameteres that have default value are optional. others are requiered.
+- Empty Function requiers the pass statement.
+- Parameteres that have default value are optional. others are requiered.
 
 ```python
 def main():
@@ -793,13 +855,13 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 
 Rule of thumb:
 
-* I\O  Multithreading
-* CPU  Multiprocessing
+- I\O  Multithreading
+- CPU  Multiprocessing
 
 ### The GIL
 
-* [Understanding the Python GIL](https://www.youtube.com/watch?v=Obt-vMVdM8s)
-* [Die Threads](https://www.youtube.com/watch?v=U66KuyD3T0M&t=296s)
+- [Understanding the Python GIL](https://www.youtube.com/watch?v=Obt-vMVdM8s)
+- [Die Threads](https://www.youtube.com/watch?v=U66KuyD3T0M&t=296s)
 
 The GIL (Global Interpreter Lock) allows only one thread to run at a time for a single interpreter.
 
@@ -830,17 +892,17 @@ if __name__ == "__main__":
 
 ### References
 
-* [Producer-Consumer Using Queue](https://realpython.com/intro-to-python-threading/#producer-consumer-using-queue)
+- [Producer-Consumer Using Queue](https://realpython.com/intro-to-python-threading/#producer-consumer-using-queue)
 
-* [Youtube](https://youtu.be/fKl2JW_qrso?t=1037) example using concurrent.futures.{Process,Thread}PoolExecuter
+- [Youtube](https://youtu.be/fKl2JW_qrso?t=1037) example using concurrent.futures.{Process,Thread}PoolExecuter
 
-* [An introduction to parallel programming using Python's multiprocessing module](https://sebastianraschka.com/Articles/2014_multiprocessing.html)
+- [An introduction to parallel programming using Python's multiprocessing module](https://sebastianraschka.com/Articles/2014_multiprocessing.html)
 
-* [Real Python](https://realpython.com/intro-to-python-threading/#using-a-threadpoolexecutor) - good article about multi-threading with good examples
+- [Real Python](https://realpython.com/intro-to-python-threading/#using-a-threadpoolexecutor) - good article about multi-threading with good examples
 
-* [Tutorialspoint](https://www.tutorialspoint.com/python/python_multithreading.htm) - more threading examples
+- [Tutorialspoint](https://www.tutorialspoint.com/python/python_multithreading.htm) - more threading examples
 
-* [Multithreading Multiprocessing](https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python#article-updates) - tutorial. relatively deep
+- [Multithreading Multiprocessing](https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python#article-updates) - tutorial. relatively deep
 
 ## Context Manager - The 'with' statement
 
@@ -914,8 +976,8 @@ logger.critical('critical message')
 
 ### Logging - References
 
-* [Docs](https://docs.python.org/3/library/logging.html)
-* [Logging Cookbook](https://docs.python.org/3.6/howto/logging-cookbook.html#logging-cookbook)
+- [Docs](https://docs.python.org/3/library/logging.html)
+- [Logging Cookbook](https://docs.python.org/3.6/howto/logging-cookbook.html#logging-cookbook)
 
 ## Testing
 

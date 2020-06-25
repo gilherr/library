@@ -1,5 +1,18 @@
 # Linux
 
+<!-- TOC -->
+
+- [Linux Users Management](#linux-users-management)
+    - [Add New Users](#add-new-users)
+    - [Add User to Group](#add-user-to-group)
+    - [Delete Users](#delete-users)
+    - [Change Current User](#change-current-user)
+    - [References](#references)
+- [Datetime](#datetime)
+    - [Set System Time](#set-system-time)
+
+<!-- /TOC -->
+
 ## Linux Users Management
 
 ### Add New Users

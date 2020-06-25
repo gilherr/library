@@ -1,5 +1,49 @@
 # Ruby Basics
 
+<!-- TOC -->
+
+- [General Notes](#general-notes)
+- [References](#references)
+- [Style Guide](#style-guide)
+- [Variable Scope Indicators](#variable-scope-indicators)
+- [Numbers](#numbers)
+- [Strings](#strings)
+    - [String Methods](#string-methods)
+    - [String Interpolation](#string-interpolation)
+    - [Single vs Double Quotes](#single-vs-double-quotes)
+- [Arrays](#arrays)
+    - [Indexing](#indexing)
+    - [Array Methods](#array-methods)
+- [Hashes](#hashes)
+- [Symbols](#symbols)
+- [Ranges](#ranges)
+- [Constants](#constants)
+- [Conditionals](#conditionals)
+    - [if else](#if-else)
+    - [unless](#unless)
+    - [case](#case)
+    - [Or-Equals](#or-equals)
+    - [Statement Modifiers](#statement-modifiers)
+- [Loops](#loops)
+    - [Control Methods](#control-methods)
+- [Iterators](#iterators)
+- [Input Output](#input-output)
+- [Filter - Map - Reduce Methods](#filter---map---reduce-methods)
+    - [Filter (Find)](#filter-find)
+    - [Map](#map)
+    - [Reduce (Inject)](#reduce-inject)
+- [Sort](#sort)
+- [Merge (hashes)](#merge-hashes)
+- [Methods](#methods)
+    - [Optional Arguments](#optional-arguments)
+    - [Return Value](#return-value)
+    - [Return Multiple Values](#return-multiple-values)
+- [Classes](#classes)
+- [Installing `rbenv`](#installing-rbenv)
+    - [Usage](#usage)
+
+<!-- /TOC -->
+
 ## General Notes
 
 * `object.class` will return the class of the requested object

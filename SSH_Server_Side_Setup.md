@@ -1,5 +1,14 @@
 # SSH Server Setup and Usage
 
+<!-- TOC -->
+
+- [Setup Server Side](#setup-server-side)
+    - [Setup Key Based Connection](#setup-key-based-connection)
+- [Connect From User Machine](#connect-from-user-machine)
+    - [Key Setup](#key-setup)
+
+<!-- /TOC -->
+
 ## Setup Server Side
 
 ```bash
