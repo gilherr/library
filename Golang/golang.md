@@ -384,6 +384,33 @@ func main() {
 }
 ```
 
+json renaming tags
+
+```go
+type User struct {
+    Name          string    `json:"name"`
+    Password      string    `json:"password"`
+    PreferredFish []string  `json:"preferredFish,omitempty"`
+    CreatedAt     time.Time `json:"createdAt"`
+}
+
+u := &User{
+    Name:      "Sammy the Shark",
+    Password:  "fisharegreat",
+    CreatedAt: time.Now(),
+}
+
+json.MarshalIndent(u, "", "  ")
+
+//Output. Note the names of the fields.
+{
+  "name": "Sammy the Shark",
+  "password": "fisharegreat",
+  "createdAt": "2019-09-23T18:21:53.863846-04:00"
+}
+
+```
+
 ## Control Flow
 
 ### If Else
